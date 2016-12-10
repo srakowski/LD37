@@ -9,5 +9,11 @@
     <Import_RootNamespace>LD37</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Behaviors\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Game\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameplayScene.cs" />
   </ItemGroup>
 </Project>

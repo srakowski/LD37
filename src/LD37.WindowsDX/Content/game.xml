@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:ns="Microsoft.Xna.Framework">
   <Asset Type="Coldsteel.Configuration.Game">
-    <Title>Derpfender</Title>
+    <Title>Oner-OOM</Title>
     <References>
-      <Item>Derpfender.dll</Item>
+      <Item>LD37.dll</Item>
     </References>
     <GameComposerType>Coldsteel.Composition.CodeBasedGameComposer</GameComposerType>
     <SceneComposerType>Coldsteel.Composition.CodeBasedSceneComposer</SceneComposerType>
-    <StartupScene>MainMenuScene</StartupScene>
+    <StartupScene>GameplayScene</StartupScene>
   </Asset>
 </XnaContent>

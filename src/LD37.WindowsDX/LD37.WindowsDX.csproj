@@ -9,8 +9,8 @@
     <ProjectGuid>{E8E921C2-CA5A-4D7D-AA6A-B39FA288AD38}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LD37.WindowsDX</RootNamespace>
-    <AssemblyName>LD37.WindowsDX</AssemblyName>
+    <RootNamespace>LD37</RootNamespace>
+    <AssemblyName>LD37</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -46,6 +46,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Coldsteel.Core">
+      <HintPath>..\..\lib\Coldsteel.Core.dll</HintPath>
+    </Reference>
     <Reference Include="MonoGame.Framework">
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>
