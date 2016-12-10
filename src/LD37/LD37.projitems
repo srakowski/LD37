@@ -9,11 +9,26 @@
     <Import_RootNamespace>LD37</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Behaviors\" />
     <Folder Include="$(MSBuildThisFileDirectory)Game\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Enemies\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Champions\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Building.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Buildings\DestructibleBuilding.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Buildings\Shop.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Buildings\Tower.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Enemy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Buildings\EnemySpawnPoint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Buildings\IndestructibleBuilding.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Items\EmptyItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Champion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Buildings\ProtectedBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Player.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Stat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Stats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameplayScene.cs" />
   </ItemGroup>
 </Project>
