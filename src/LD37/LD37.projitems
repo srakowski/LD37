@@ -9,12 +9,13 @@
     <Import_RootNamespace>LD37</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Behaviors\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Game\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\Enemies\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\Champions\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\ChampionBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\PlayerBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\ControlsBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Building.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Buildings\DestructibleBuilding.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Buildings\Shop.cs" />

@@ -64,10 +64,11 @@
   <ItemGroup>
     <Folder Include="Content\audio\" />
     <Folder Include="Content\fonts\" />
-    <Folder Include="Content\sprites\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\game.xml" />
+    <Content Include="Content\sprites\champion.png" />
+    <Content Include="Content\sprites\pointer.png" />
   </ItemGroup>
   <Import Project="..\LD37\LD37.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
