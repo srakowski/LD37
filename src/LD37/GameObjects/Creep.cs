@@ -25,11 +25,14 @@ namespace LD37.GameObjects
             AddComponent(new CreepBehavior(champion, staticTargets));
             AddComponent(new SpriteRenderer("sprites/creep"));
             AddComponent(new RigidBody());
-            AddComponent(new BoxCollider(-20, -20, 40, 40));
-            AddComponent(new BoxRenderer(-20, -20, 40, 40)
-            {
-                Color = Color.Lime
-            });
+            AddComponent(new BoxCollider(-48, -48, 96, 96));
+            Stats.MovementSpeed.BaselineValue = 0.3f;
+            Stats.Health.BaselineValue = 10;
+
+            //AddComponent(new BoxRenderer(-20, -20, 40, 40)
+            //{
+            //    Color = Color.Lime
+            //});
         }
 
         internal static Creep Create(CreepLevel level, ICreepTarget champion, ICreepTarget[] staticTargets)

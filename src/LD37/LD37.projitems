@@ -9,16 +9,23 @@
     <Import_RootNamespace>LD37</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\BulletBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\FollowBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\ChampionBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\ChampionNexusBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\CreepBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\LaneBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\NewBulletBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\NexusBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\CameraController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\ChampionControllerBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\TowerBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Bullet.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Champion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ChampionNexus.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Creep.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CreepLevel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\GameManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Lane.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Nexus.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\NexusRubble.cs" />
@@ -34,5 +41,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Stat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Stats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameplayScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\OldGameplayScene.cs" />
   </ItemGroup>
 </Project>

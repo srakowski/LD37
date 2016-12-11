@@ -8,7 +8,7 @@ namespace LD37.Behaviors
 {
     class LaneBehavior : Behavior
     {
-        public bool IsComplete { get; private set; } = true;
+        public bool IsComplete { get; private set; } = false;
 
         private Nexus _activeNexus;
 

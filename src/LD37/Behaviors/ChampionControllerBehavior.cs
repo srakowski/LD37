@@ -20,6 +20,8 @@ namespace LD37.Behaviors
 
         private IButtonControl _pointerSecondaryControl;
 
+        private IDirectionalControl _aimControl;
+
         private SpriteRenderer _spriteRenderer;
 
         private Texture2D _normalPointer;
@@ -38,6 +40,7 @@ namespace LD37.Behaviors
             _normalPointer = Content.Load<Texture2D>("sprites/pointer");
             _attackPointer = Content.Load<Texture2D>("sprites/attackpointer");
             _spriteRenderer = GameObject.Components.OfType<SpriteRenderer>().First();
+            _aimControl = Input.GetDirectionalControl("Aim");
         }
 
         public override void Update()
@@ -60,22 +63,18 @@ namespace LD37.Behaviors
             }
 
             // TODO: make these "WasPushed" instead.
-            if (_pointerPrimaryControl.WasPressed())
+            if (_pointerPrimaryControl.IsDown())
             {
+                Champion.Shoot(_aimControl.GetDirection());
+                //Champion.Attack(thingToAttack);
             }
 
-            if (_pointerSecondaryControl.WasPressed())
-            {
-                if (thingToAttack != null)
-                {
-                    Champion.Attack(thingToAttack);
-                }
-                else
-                {
-                    var worldPos = Camera.ToWorldCoords(Transform.Position);
-                    Champion.MoveTo(worldPos);
-                }
-            }
+            //if (_pointerSecondaryControl.WasUp())
+            //    {
+            //        var worldPos = Camera.ToWorldCoords(Transform.Position);
+            //        Champion.MoveTo(worldPos);
+            //    }
+            //}
         }
 
         private bool IsUnderPointer(IChampionTarget attackable)

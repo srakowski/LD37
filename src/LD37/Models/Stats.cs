@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LD37.Models
 {
-    class Stats
+    public class Stats
     {
         public const float MaxAttackSpeed = 2.0f;
 
@@ -18,7 +18,7 @@ namespace LD37.Models
 
         public Stat MovementSpeed { get; set; } = new Stat("Movement Speed")
         {
-            BaselineValue = 0.1f
+            BaselineValue = 0.2f
         };
 
         public Stat Armor { get; set; } = new Stat("Armor");
@@ -45,9 +45,9 @@ namespace LD37.Models
             this.Health.ActiveModifier -= damageAmount;
         }
 
-        internal int CalculateAttackCooldown()
+        internal int CalculateAttackCooldownWait()
         {
-            return 1000 - (int)(1000 * (2.0f - AttackSpeed.ActiveValue));
+            return 1000 - (int)(1000 * (AttackSpeed.ActiveValue / 2.0f));
         }
     }
 }

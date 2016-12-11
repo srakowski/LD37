@@ -9,12 +9,13 @@ namespace LD37.Behaviors
 {
     class CameraController : Behavior
     {
-        private const float _speed = 1f;
+        private const float _speed = 0.5f;
 
         private IButtonControl Up { get; set; }
         private IButtonControl Down { get; set; }
         private IButtonControl Left { get; set; }
         private IButtonControl Right { get; set; }
+
 
         public override void Activate()
         {
@@ -22,14 +23,15 @@ namespace LD37.Behaviors
             Down = Input.GetButtonControl("Down");
             Left = Input.GetButtonControl("Left");
             Right = Input.GetButtonControl("Right");
+
         }
 
         public override void Update()
         {
-            if (Up.IsDown()) this.Transform.Position += new Vector2(0, 1) * _speed * Delta;
-            if (Down.IsDown()) this.Transform.Position += new Vector2(0, -1) * _speed * Delta;
-            if (Left.IsDown()) this.Transform.Position += new Vector2(1, 0) * _speed * Delta;
-            if (Right.IsDown()) this.Transform.Position += new Vector2(-1, 0) * _speed * Delta;
+            if (Up.IsDown()) this.Transform.Position += new Vector2(0, -1) * _speed * Delta;
+            if (Down.IsDown()) this.Transform.Position += new Vector2(0, 1) * _speed * Delta;
+            if (Left.IsDown()) this.Transform.Position += new Vector2(-1, 0) * _speed * Delta;
+            if (Right.IsDown()) this.Transform.Position += new Vector2(1, 0) * _speed * Delta;
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LD37.Models
 {
-    class Stat
+    public class Stat
     {
         public string Name { get; set; }
 

@@ -19,6 +19,8 @@ namespace LD37.Game
         public ButtonControl PointerPrimary = new ButtonControl("PointerPrimary");
         public ButtonControl PointerSecondary = new ButtonControl("PointerSecondary");
 
+        public DirectionalControl Aim = new DirectionalControl("Aim");
+
         public void ConfigureControls()
         {
             Up.AddBinding(new KeyboardButtonControlBinding(Keys.Up));
@@ -26,16 +28,23 @@ namespace LD37.Game
             Left.AddBinding(new KeyboardButtonControlBinding(Keys.Left));
             Right.AddBinding(new KeyboardButtonControlBinding(Keys.Right));
 
+            Up.AddBinding(new KeyboardButtonControlBinding(Keys.W));
+            Down.AddBinding(new KeyboardButtonControlBinding(Keys.S));
+            Left.AddBinding(new KeyboardButtonControlBinding(Keys.A));
+            Right.AddBinding(new KeyboardButtonControlBinding(Keys.D));
+
             Pointer.AddBinding(new MousePositionalControlBinding());
             PointerPrimary.AddBinding(new MouseButtonControlBinding(MouseButton.Left));
             PointerSecondary.AddBinding(new MouseButtonControlBinding(MouseButton.Right));
+
+            Aim.AddBinding(new MouseDirectionalControlBinding());
         }
 
         public IEnumerable<IControl> GetResult()
         {
             return new IControl[]
             {
-                Up, Down, Left, Right,
+                Up, Down, Left, Right, Aim,
                 Pointer, PointerPrimary, PointerSecondary
             };
         }

@@ -21,7 +21,7 @@ namespace LD37.Behaviors
 
         public int TimeBetweenWaves { get; set; } = 30000;
 
-        public int NumCreepsToSpawn { get; private set; } = 10;
+        public int NumCreepsToSpawn { get; private set; } = 30;
 
         public CreepLevel CreepLevelToBeSpawned { get; }
 

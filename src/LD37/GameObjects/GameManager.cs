@@ -1,17 +1,16 @@
 ﻿using Coldsteel;
-using Coldsteel.Rendering;
-using LD37.Behaviors;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LD37.GameObjects
 {
-    class MainCamera : GameObject
+    class GameManager : GameObject
     {
-        public MainCamera()
+        public ChampionNexus ChampionNexus { get; set; }
+
+        public GameManager()
         {
-            AddComponent(new Camera());
         }
     }
 }

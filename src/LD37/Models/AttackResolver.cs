@@ -7,7 +7,7 @@ namespace LD37.Models
 {
     static class AttackResolver
     {
-        internal static void ResolvePhysicalAttack(IAttackable attacker, IAttackable attacked)
+        internal static float ResolvePhysicalAttack(IAttackable attacker, IAttackable attacked)
         {
             var damageAmount = attacker.Stats.AttackDamage.ActiveValue;
 
@@ -19,7 +19,7 @@ namespace LD37.Models
 
             damageAmount -= (damageAmount * resistence);
 
-            attacked.Stats.TakeDamage(damageAmount);
+            return damageAmount;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Coldsteel;
+using Coldsteel.Physics;
 using Coldsteel.Scripting;
 using LD37.GameObjects;
 using LD37.Models;
@@ -6,6 +7,7 @@ using Microsoft.Xna.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LD37.Behaviors
@@ -23,6 +25,8 @@ namespace LD37.Behaviors
         private ICreepTarget[] _staticCreepTargets;
 
         public int AggroRadius { get; set; } = 300;
+
+        private bool _mayChangeDir = true;
 
         public CreepBehavior(ICreepTarget champion, ICreepTarget[] staticCreepTargets)
         {
@@ -44,9 +48,13 @@ namespace LD37.Behaviors
 
             this.RigidBody.Velocity = Vector2.Zero;
             if (Vector2.Distance(Transform.Position, target.Position) < Creep.Stats.AttackRadius.ActiveValue)
+            {
                 Attack(target);
+            }
             else
+            {
                 MoveToward(target);
+            }
 
             // get best target
             // if target is within attack range, attack
@@ -59,23 +67,43 @@ namespace LD37.Behaviors
                 return;
 
             _mayAttack = false;
-            // TODO: execute attack
-
+            AttackResolver.ResolvePhysicalAttack(Creep, target);
             StartCoroutine(AttackCooldown(Creep.Stats.AttackSpeed.ActiveValue));
         }
 
         private IEnumerator AttackCooldown(float attackSpeed)
         {
-            // TODO: move to stats
-            yield return WaitYieldInstruction.Create(1000 - (int)(1000 * (2.0f - attackSpeed)));
+            yield return WaitYieldInstruction.Create(Creep.Stats.CalculateAttackCooldownWait());
             _mayAttack = true;
         }
 
         private void MoveToward(ICreepTarget target)
         {
-            var direction = target.Position - this.Transform.Position;
-            direction.Normalize();
-            RigidBody.Velocity = direction * Creep.Stats.MovementSpeed.ActiveValue;
+            if (!_mayChangeDir)
+                return;
+
+            var directionIWantToGoIn = target.Position - this.Transform.Position;
+
+            var closeCreep = Scene.GameObjects.Where(go => go is Creep && go != this.Creep &&
+                Vector2.Distance(this.Transform.Position, go.Transform.Position) < 48f)
+                .OrderBy(go => Vector2.Distance(this.Transform.Position, go.Transform.Position))
+                .FirstOrDefault();
+
+            if (closeCreep != null)
+                directionIWantToGoIn = Vector2.Transform(
+                    this.Transform.Position - closeCreep.Transform.Position,
+                    Matrix.Identity * Matrix.CreateRotationZ(MathHelper.ToRadians(90)));
+
+            directionIWantToGoIn.Normalize();
+            RigidBody.Velocity = directionIWantToGoIn * Creep.Stats.MovementSpeed.ActiveValue;
+
+            StartCoroutine(GoLikeThisForABit());
+        }
+
+        private IEnumerator GoLikeThisForABit()
+        {
+            yield return WaitYieldInstruction.Create(1000);
+            _mayChangeDir = true;
         }
 
         private ICreepTarget GetBestTarget()
