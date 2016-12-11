@@ -1,43 +1,40 @@
 ﻿using Coldsteel;
-using LD37.Models;
-using Microsoft.Xna.Framework;
-using Coldsteel.Rendering;
-using LD37.Behaviors;
-using System;
 using Coldsteel.Physics;
+using Coldsteel.Rendering;
+using Microsoft.Xna.Framework;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 
 namespace LD37.GameObjects
 {
-    public class Champion : GameObject, ICreepTarget
+    public class Champion : GameObject, IStatsHolder
     {
-        private ChampionBehavior _behavior;
+        public Vector2? TargetDestination { get; set; }
 
-        public Vector2 Position => this.Transform.Position;
+        public Stats Stats { get; private set; } = new Stats();
 
-        public Stats Stats { get; set; } = new Stats();
+        public Hand Hand { get; set; }
+
+        public Sword Sword { get; set; }
+
+        public IChampionAttackable SelectedAttackTarget { get; internal set; }
 
         public Champion()
         {
-            AddComponent(new SpriteRenderer("sprites/champion"));
-            AddComponent(_behavior = new ChampionBehavior());
             AddComponent(new RigidBody());
-            AddComponent(new CameraController());
-            Stats.AttackRadius.BaselineValue = 400f;
-            Stats.AttackSpeed.BaselineValue = 1.5f;
-            Stats.MovementSpeed.BaselineValue = 0.5f;
-        }
+            AddComponent(new SpriteRenderer("sprites/champion"));
+            AddComponent(new ChampionLookBehavior());
+            AddComponent(new ChampionController());
+            AddComponent(new ChampionMovementBehavior());
+            AddComponent(new AddHealthBarBehavior());
+            AddComponent(new ChampionAttackBehavior());
 
-        //public void Attack(IChampionTarget target) => 
-        //    _behavior.Attack(target);
-
-        public void MoveTo(Vector2 position)
-        {
-            _behavior.MoveTo(position);
-        }
-
-        internal void Shoot(Vector2 vector2)
-        {
-            _behavior.Shoot(vector2);
+            Stats.AttackRadius.Baseline = 140f;
+            Stats.AttackSpeed.Baseline = 2f;
+            Stats.AttackDamage.Baseline = 10f;
+            //AddComponent(new SimulateDamageBehavior(this));
         }
     }
 }

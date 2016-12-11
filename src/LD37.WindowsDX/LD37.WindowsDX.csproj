@@ -80,6 +80,7 @@
     <Content Include="Content\sprites\nexus5.png" />
     <Content Include="Content\sprites\pnexus.png" />
     <Content Include="Content\sprites\pointer.png" />
+    <Content Include="Content\sprites\sword.png" />
     <Content Include="Content\sprites\tower.png" />
   </ItemGroup>
   <Import Project="..\LD37\LD37.projitems" Label="Shared" />
