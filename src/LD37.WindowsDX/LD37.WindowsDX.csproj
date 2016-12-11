@@ -67,7 +67,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\game.xml" />
+    <Content Include="Content\sprites\attackpointer.png" />
     <Content Include="Content\sprites\champion.png" />
+    <Content Include="Content\sprites\creep.png" />
+    <Content Include="Content\sprites\dot.png" />
+    <Content Include="Content\sprites\enexus.png" />
+    <Content Include="Content\sprites\nexus1.png" />
+    <Content Include="Content\sprites\nexus2.png" />
+    <Content Include="Content\sprites\nexus3.png" />
+    <Content Include="Content\sprites\nexus4.png" />
+    <Content Include="Content\sprites\nexus5.png" />
     <Content Include="Content\sprites\pointer.png" />
   </ItemGroup>
   <Import Project="..\LD37\LD37.projitems" Label="Shared" />

@@ -8,12 +8,18 @@ namespace LD37.Models
     {
         public string Name { get; set; }
 
-        public int ActiveValue => BaselineValue + BaselineModifier + ActiveModifier;
+        public float ActiveValue => BaselineValue + BaselineModifier + ActiveModifier;
 
-        public int ActiveModifier { get; set; }
+        public float ActiveModifier { get; set; }
 
-        public int BaselineValue { get; set; }
+        public float BaselineValue { get; set; }
 
-        public int BaselineModifier { get; set; }
+        public float BaselineModifier { get; set; }
+
+        public Stat(string name)
+        {
+            this.Name = name;
+            this.BaselineValue = 1.0f;
+        }
     }
 }
