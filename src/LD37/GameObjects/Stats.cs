@@ -31,6 +31,17 @@ namespace LD37.GameObjects
             return attacker.AttackDamage.Value;
         }
 
+        internal void RestoreHealth(int value)
+        {
+            Health.ActiveModifier += value;
+            if (Health.ActiveModifier > 0)
+                Health.ActiveModifier = 0;
+        }
+
         public Stat AttackDamage { get; set; } = new Stat();
+
+        public Stat AggroRadius { get; set; } = new Stat();
+
+        public Stat MovementSpeed { get; set; } = new Stat();
     }
 }

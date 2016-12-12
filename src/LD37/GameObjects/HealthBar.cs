@@ -22,10 +22,10 @@ namespace LD37.GameObjects
 
         public HealthBar(IStatsHolder statsHolder)
         {
-            AddComponent(new BoxRenderer(-40, -60, 80, 8) { Color = Color.Black });
+            AddComponent(new BoxRenderer(-40, -100, 80, 8) { Color = Color.Black });
             AddComponent(_healthBox = new BoxRenderer()
             {
-                Shape = new Rectangle(-39, -59, 78, 6),
+                Shape = new Rectangle(-39, -99, 78, 6),
                 Color = Color.Lime
             });
 

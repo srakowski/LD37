@@ -9,7 +9,7 @@ namespace LD37.GameObjects
 {
     class SwingBehavior : Behavior
     {
-        private const float _swingSpeed = 0.02f;
+        private const float _swingSpeed = 0.03f;
 
         public bool IsLeft { get; internal set; }
 

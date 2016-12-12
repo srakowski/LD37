@@ -61,18 +61,27 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Content\audio\" />
-    <Folder Include="Content\fonts\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Content\audio\gamesong.mp3" />
+    <Content Include="Content\audio\hit1.wav" />
+    <Content Include="Content\audio\hit2.wav" />
+    <Content Include="Content\audio\hit3.wav" />
+    <Content Include="Content\audio\pickup.wav" />
+    <Content Include="Content\audio\spawn.wav" />
     <Content Include="Content\game.xml" />
+    <Content Include="Content\sprites\arrow.png" />
+    <Content Include="Content\sprites\arrowspawn.png" />
     <Content Include="Content\sprites\attackpointer.png" />
     <Content Include="Content\sprites\bullet.png" />
     <Content Include="Content\sprites\champion.png" />
     <Content Include="Content\sprites\creep.png" />
+    <Content Include="Content\sprites\creepknife.png" />
+    <Content Include="Content\sprites\creepspawn.png" />
+    <Content Include="Content\sprites\dead.png" />
     <Content Include="Content\sprites\dot.png" />
     <Content Include="Content\sprites\enexus.png" />
+    <Content Include="Content\sprites\floor.png" />
     <Content Include="Content\sprites\nexus1.png" />
     <Content Include="Content\sprites\nexus2.png" />
     <Content Include="Content\sprites\nexus3.png" />
@@ -80,8 +89,13 @@
     <Content Include="Content\sprites\nexus5.png" />
     <Content Include="Content\sprites\pnexus.png" />
     <Content Include="Content\sprites\pointer.png" />
+    <Content Include="Content\sprites\pot.png" />
     <Content Include="Content\sprites\sword.png" />
+    <Content Include="Content\sprites\tomato.png" />
     <Content Include="Content\sprites\tower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\fonts\hud.spritefont" />
   </ItemGroup>
   <Import Project="..\LD37\LD37.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

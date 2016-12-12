@@ -9,8 +9,10 @@ using System.Text;
 
 namespace LD37.GameObjects
 {
-    public class Champion : GameObject, IStatsHolder
+    public class Champion : GameObject, IStatsHolder, ICreepAttackable
     {
+        public Vector2 Position => Transform.Position;
+
         public Vector2? TargetDestination { get; set; }
 
         public Stats Stats { get; private set; } = new Stats();
@@ -20,7 +22,7 @@ namespace LD37.GameObjects
         public Sword Sword { get; set; }
 
         public IChampionAttackable SelectedAttackTarget { get; internal set; }
-
+        
         public Champion()
         {
             AddComponent(new RigidBody());
@@ -30,9 +32,13 @@ namespace LD37.GameObjects
             AddComponent(new ChampionMovementBehavior());
             AddComponent(new AddHealthBarBehavior());
             AddComponent(new ChampionAttackBehavior());
-
-            Stats.AttackRadius.Baseline = 140f;
-            Stats.AttackSpeed.Baseline = 2f;
+            AddComponent(new ChampionPickupBehavior());
+            AddComponent(new DeathBehavior());
+            AddComponent(new BoxCollider(-48, -48, 96, 96));
+            Stats.Health.Baseline = 10f;
+            Stats.MovementSpeed.Baseline = 0.3f;
+            Stats.AttackRadius.Baseline = 160f;
+            Stats.AttackSpeed.Baseline = 1f;
             Stats.AttackDamage.Baseline = 10f;
             //AddComponent(new SimulateDamageBehavior(this));
         }

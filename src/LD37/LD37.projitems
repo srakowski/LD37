@@ -9,29 +9,55 @@
     <Import_RootNamespace>LD37</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\AddCreepKnifeBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Arrow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ArrowBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ArrowSpawn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\BurstArrowSpawnBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ChampionPickupBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ContinualArrowSpawnBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Billboard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CameraFollowBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Champion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ChampionAttackBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ChampionBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ChampionController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ChampionLookBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ChampionMovementBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ChampionNexus.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Creep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CreepAggroBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CreepAttackBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CreepBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CreepKnife.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CreepMovementBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CreepSpawn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\CreepSpawnBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\DeathBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\GameDirector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\GameFlowBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Hand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\HasStatsBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\HealthBar.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\AddHealthBarBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\HealthBarBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\IAttackable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\IChampionAttackable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ICreepAttackable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\IRestoreHealth.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\IStatsHolder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\MainCamera.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Pointer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\PointerBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Pot.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Progression.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\ProgressionBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\SimulateDamageBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Stat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Stats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\SwingBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Sword.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Tomato.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\ControlsBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameplayScene.cs" />
   </ItemGroup>

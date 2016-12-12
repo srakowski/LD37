@@ -1,16 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LD37.GameObjects
 {
     class ChampionMovementBehavior : ChampionBehavior
     {
-        public float MovementSpeed { get; private set; } = 0.3f;
-
         public override void Update()
         {
+            this.Transform.Position =
+                new Vector2(MathHelper.Clamp(Transform.Position.X, -750, 700),
+                    MathHelper.Clamp(Transform.Position.Y, -12, 1125));
+
             if (!Champion.TargetDestination.HasValue && Champion.SelectedAttackTarget == null)
                 return;
 
@@ -26,7 +25,7 @@ namespace LD37.GameObjects
                 var direction = Champion.TargetDestination.Value -
                     this.Champion.Transform.Position;
                 direction.Normalize();
-                RigidBody.Velocity = direction * MovementSpeed;
+                RigidBody.Velocity = direction * Champion.Stats.MovementSpeed.Value;
             }
             else if (Champion.SelectedAttackTarget != null)
             {
@@ -39,7 +38,7 @@ namespace LD37.GameObjects
 
                 var direction = Champion.SelectedAttackTarget.Position - this.Champion.Transform.Position;
                 direction.Normalize();
-                RigidBody.Velocity = direction * MovementSpeed;
+                RigidBody.Velocity = direction * Champion.Stats.MovementSpeed.Value;
             }
         }
     }

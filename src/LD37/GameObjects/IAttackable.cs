@@ -5,8 +5,8 @@ using System.Text;
 
 namespace LD37.GameObjects
 {
-    public interface IChampionAttackable : IAttackable
+    public interface IAttackable : IStatsHolder
     {
-        Rectangle Bounds { get; }
+        Vector2 Position { get; }
     }
 }

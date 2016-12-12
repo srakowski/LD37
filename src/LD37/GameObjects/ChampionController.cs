@@ -27,6 +27,7 @@ namespace LD37.GameObjects
             {
                 var pointerPos = _pointerControl.GetPosition();
                 var clickWorldPoint = _camera.ToWorldCoords(pointerPos);
+
                 var attack = Scene.GameObjects.OfType<IChampionAttackable>()
                     .FirstOrDefault(a => a.Bounds.Contains(clickWorldPoint));
 
